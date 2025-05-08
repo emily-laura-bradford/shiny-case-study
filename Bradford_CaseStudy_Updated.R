@@ -181,7 +181,8 @@ server <- function(input, output, session) {
           + theme_light()
       } else {
         # same plot as above, but line rather than smooth
-        ggplot(aes(age, rate, colour = sex)) %>%
+        summary() %>%
+          ggplot(aes(age, n, colour = sex)) %>%
           + geom_line() %>%
           + scale_color_discrete(name = "Sex") %>%
           + labs(y = "Estimated number of injuries",
